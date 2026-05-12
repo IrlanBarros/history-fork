@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HistoryFork</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>History<span>Fork</span></h1>
+            <p>Onde o "E se..." ganha vida.</p>
+        </header>
+
+        <main>
+            <div class="card-input">
+                <div class="field">
+                    <label for="event">Evento Original</label>
+                    <input type="text" id="event" placeholder="Ex: Descobrimento do Brasil">
+                </div>
+
+                <div class="field">
+                    <label for="change">A Grande Mudança</label>
+                    <input type="text" id="change" placeholder="Ex: Os holandeses venceram em Recife">
+                </div>
+
+                <button id="btn-gerar" onclick="simular()">Ramificar História</button>
+            </div>
+
+            <!-- Loader para quando a IA estiver pensando -->
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Calculando ramificações temporais...</p>
+            </div>
+
+            <div id="map-container" class="hidden">
+                <h3 style="text-align: center; margin-bottom: 15px; color: var(--accent);">Geografia da Mudança</h3>
+                <div id="map"></div>
+            </div>
+
+            <div id="graph-container" class="hidden">
+                <h3 style="text-align: center; margin-bottom: 20px; color: var(--accent);">Mapa de Divergência Temporal</h3>
+                
+                <!-- Deixe esta div totalmente vazia no HTML -->
+                <div class="mermaid" id="mermaid-graph"></div>
+            </div>
+            <!-- Seção de Resultados -->
+            <section id="result" class="hidden">
+                <div class="result-card">
+                    <h2 id="res-title"></h2>
+                    <p class="divergence-label">Ponto de Divergência:</p>
+                    <p id="res-divergence" class="highlight"></p>
+
+                    <div class="paradox-meter-container">
+                        <div class="meter-header">
+                            <span>Risco de Paradoxo</span>
+                            <span id="risk-value">0%</span>
+                        </div>
+                        <div class="meter-bar">
+                            <div id="risk-fill"></div>
+                        </div>
+                        <p id="risk-analysis" class="risk-text"></p>
+                    </div>
+                    
+                    <div id="timeline">
+                        <!-- O JS vai injetar os eventos aqui -->
+                    </div>
+
+                    <div id="visual-record-container" class="hidden">
+                        <h3 class="section-title">Registro Visual Encontrado</h3>
+                        <div class="image-frame">
+                            <img id="visual-image" src="" alt="Registro Visual da Ucronia">
+                            <div class="image-caption" id="image-description"></div>
+                        </div>
+                    </div>
+
+                    <div class="summary-box">
+                        <h3>Impacto Global</h3>
+                        <p id="summary"></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>mermaid.initialize({ startOnLoad: false, theme: 'dark' });</script>
+</body>
+</html>
