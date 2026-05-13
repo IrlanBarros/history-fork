@@ -53,7 +53,7 @@ Onde:
 
 1. **Clonar o repositório**:
    ```bash
-   git clone [https://github.com/IrlanBarros/history-fork.git](https://github.com/IrlanBarros/history-fork.git)
+   git clone https://github.com/IrlanBarros/history-fork.git
    cd history-fork
    ```
 
