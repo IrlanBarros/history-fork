@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HistoryFork</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/layout.css">
+    <link rel="stylesheet" href="/static/css/components.css">
+    </head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Histórico de <span>Ramificações</span></h1>
+            <a href="/" class="btn-back">← Voltar para a Máquina do Tempo</a>
+        </header>
+
+        <main>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Buscar por evento ou mudança..." onkeyup="filtrarUcronias()">
+            </div>
+
+            <div id="history-grid" class="grid-container">
+                <div class="loading-small">Carregando registros temporais...</div>
+            </div>
+        </main>
+
+        <div id="modal-view" class="modal hidden">
+            <div class="modal-content result-card">
+                <span class="close-btn" onclick="fecharModal()">&times;</span>
+                <div id="modal-body">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/history.js"></script>
+</body>
+</html>

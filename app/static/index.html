@@ -9,13 +9,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/layout.css">
+    <link rel="stylesheet" href="/static/css/components.css">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>History<span>Fork</span></h1>
             <p>Onde o "E se..." ganha vida.</p>
+
+            <nav class="nav-menu">
+                <a href="/search" class="btn-history">
+                    <span class="icon">📜</span> Ver histórico de ucronias
+                </a>
+            </nav>
         </header>
 
         <main>
@@ -30,7 +38,7 @@
                     <input type="text" id="change" placeholder="Ex: Os holandeses venceram em Recife">
                 </div>
 
-                <button id="btn-gerar" onclick="simular()">Ramificar História</button>
+                <button id="btn-gerar" onclick="simular()">Gerar nova linha do tempo</button>
             </div>
 
             <!-- Loader para quando a IA estiver pensando -->
@@ -39,19 +47,15 @@
                 <p>Calculando ramificações temporais...</p>
             </div>
 
-            <div id="map-container" class="hidden">
-                <h3 style="text-align: center; margin-bottom: 15px; color: var(--accent);">Geografia da Mudança</h3>
-                <div id="map"></div>
-            </div>
-
             <div id="graph-container" class="hidden">
                 <h3 style="text-align: center; margin-bottom: 20px; color: var(--accent);">Mapa de Divergência Temporal</h3>
                 
-                <!-- Deixe esta div totalmente vazia no HTML -->
                 <div class="mermaid" id="mermaid-graph"></div>
             </div>
+
             <!-- Seção de Resultados -->
             <section id="result" class="hidden">
+                <h3 style="text-align: center; margin-bottom: 15px; color: var(--accent);">Linha do tempo alternativa</h3>
                 <div class="result-card">
                     <h2 id="res-title"></h2>
                     <p class="divergence-label">Ponto de Divergência:</p>
@@ -72,24 +76,21 @@
                         <!-- O JS vai injetar os eventos aqui -->
                     </div>
 
-                    <div id="visual-record-container" class="hidden">
-                        <h3 class="section-title">Registro Visual Encontrado</h3>
-                        <div class="image-frame">
-                            <img id="visual-image" src="" alt="Registro Visual da Ucronia">
-                            <div class="image-caption" id="image-description"></div>
-                        </div>
-                    </div>
-
                     <div class="summary-box">
                         <h3>Impacto Global</h3>
                         <p id="summary"></p>
                     </div>
                 </div>
             </section>
+
+            <div id="map-container" class="hidden">
+                <h3 style="text-align: center; margin-bottom: 15px; color: var(--accent);">Geografia da Mudança</h3>
+                <div id="map"></div>
+            </div>
         </main>
     </div>
 
-    <script src="/static/script.js"></script>
+    <script type="module" src="/static/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>mermaid.initialize({ startOnLoad: false, theme: 'dark' });</script>
