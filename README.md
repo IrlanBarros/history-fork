@@ -4,6 +4,9 @@ O **HistoryFork** é uma plataforma avançada de simulação de ucronias (histó
 
 Diferente de simuladores lineares, o HistoryFork permite a criação de uma **Árvore de Realidades**, onde cada simulação pode servir de base para novas bifurcações, calculando dinamicamente o risco de colapso temporal (paradoxos).
 
+## 📸 Interface do Sistema
+![Tela principal do HistoryFork](app/resources/images/history_fork.png)
+
 ## 🚀 Funcionalidades Principais
 
 - **Ramificação Recursiva (The Fork):** Crie novas realidades a partir de simulações existentes, preservando o contexto histórico da linhagem.
